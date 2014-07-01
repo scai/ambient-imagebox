@@ -1,10 +1,21 @@
 import 'dart:html';
 
 void main() {
-  document.querySelectorAll("img").onClick.listen(onClick);
+  Element imagesContainer = document.querySelector('#images');
+  List<String> images = ['images/cat_bw.jpg', 'images/milky_way.jpg', 'images/mochi.jpg', 'images/shanghai.jpg', 'images/tulips.jpg'];
+  images.forEach((url) => imagesContainer.append(loadImage(url)));
 }
 
-void onClick(MouseEvent event) {
+ImageElement loadImage(String imageUrl) {
+  ImageElement img = new ImageElement();
+  img
+      ..height = 200
+      ..src = imageUrl
+      ..onLoad.listen(onImageLoaded);
+  return img;
+}
+
+void onImageLoaded(Event event) {
   DateTime start = new DateTime.now();
   ImageElement img = event.target;
   ImageData imageData = getImageData(img);
@@ -33,7 +44,9 @@ void onClick(MouseEvent event) {
   img.style.borderColor = "rgba($r, $g, $b, $alpha)";
   img.title = "Ambient color is rgba($r, $g, $b, $alpha)";
   DateTime end = new DateTime.now();
-  document.querySelector("#log").text = "Done in ${end.difference(start).inMilliseconds} ms.";
+  LIElement logEntry = new LIElement();
+  logEntry.text = "Done in ${end.difference(start).inMilliseconds} ms. ${img.src}";
+  document.querySelector("#log").append(logEntry);
 }
 
 ImageData getImageData(ImageElement img) {

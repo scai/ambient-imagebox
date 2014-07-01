@@ -4,3 +4,7 @@ img {
   margin: 10px;
   box-shadow: #ccc 2px 2px 4px;
 }
+
+li {
+  list-style: none;
+}
