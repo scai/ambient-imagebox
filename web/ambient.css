@@ -1,0 +1,6 @@
+img {
+  border: solid 10px white;
+  border-bottom-width: 50px;
+  margin: 10px;
+  box-shadow: #ccc 2px 2px 4px;
+}
