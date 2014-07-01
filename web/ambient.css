@@ -3,6 +3,7 @@ img {
   border-bottom-width: 50px;
   margin: 10px;
   box-shadow: #ccc 2px 2px 4px;
+  transition: border-color 0.4s;
 }
 
 li {
