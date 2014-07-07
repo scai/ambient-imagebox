@@ -4,8 +4,6 @@ void main() {
   Element imagesContainer = document.querySelector('#images');
   List<String> images = ['images/cat_bw.jpg', 'images/milky_way.jpg', 'images/mochi.jpg', 'images/shanghai.jpg', 'images/tulips.jpg'];
   images.forEach((url) => imagesContainer.append(loadImage(url)));
-
-  document.querySelector('#load-flickr').onClick.listen(onLoadFlickr);
 }
 
 ImageElement loadImage(String imageUrl) {
@@ -59,8 +57,4 @@ ImageData getImageData(ImageElement img) {
   context.drawImage(img, 0, 0);
   ImageData imageData = context.getImageData(0, 0, img.width, img.height);
   return imageData;
-}
-
-void onLoadFlickr(MouseEvent event) {
-  
 }
