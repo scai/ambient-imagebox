@@ -1,5 +1,5 @@
-name: ambient
-description: A sample web application
+name: AmbientImageBox
+description: A Dart image widget whose border color matches the image color tone.
 dependencies:
   browser: any
   image: any
