@@ -9,7 +9,6 @@ void main() {
 ImageElement loadImage(String imageUrl) {
   ImageElement img = new ImageElement();
   img
-      ..height = 200
       ..src = imageUrl
       ..onLoad.listen(onImageLoaded);
   return img;

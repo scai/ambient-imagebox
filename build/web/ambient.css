@@ -1,0 +1,35 @@
+img {
+  border: solid 10px white;
+  border-bottom-width: 50px;
+  margin: 10px;
+  box-shadow: #ccc 2px 2px 4px;
+  transition: border-color 0.4s;
+  height: 200px;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    display: block;
+    width: 90%;
+    height: auto;
+  }
+  
+  #log {
+    text-align: left;
+  }
+}
